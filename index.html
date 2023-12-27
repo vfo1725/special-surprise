@@ -31,9 +31,14 @@
                     function moveButton() {
                         var random = Math.floor(Math.random() * 10) + 1;
 
-                        if(random != 5){
-                            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth - 10);
-                            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight - 10);
+                        if(random != 9){
+                            var margin = 100;
+                            var maxWidth = window.innerWidth - margin - document.getElementById('noButton').offsetWidth;
+                            var maxHeight = window.innerHeight - margin - document.getElementById('noButton').offsetHeight;
+
+                            var x = Math.random() * maxWidth;
+                            var y = Math.random() * maxHeight;
+
                             document.getElementById('noButton').style.left = `${x}px`;
                             document.getElementById('noButton').style.top = `${y}px`;
                         }
