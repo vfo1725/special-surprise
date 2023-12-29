@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style/css/styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Would you like to go on a date with me this Saturday hehe :)</h1>
+            </div>
+            <div class="gif_container">
+
+                <img src="./style/images/peek-4.gif" alt="Cute animated illustration">
+                <img src="./style/images/peek-yes-1.gif" alt="Cute animated illustration">
+            </div>
+            <br>
+            <br>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="nextNo()">No</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+
+                    function nextNo() {
+                        window.location.href="no.html"
+                    }
+                    
+                    function moveButton() {
+                        var random = Math.floor(Math.random() * 10) + 1;
+
+                        if(random != 9){
+                            var margin = 100;
+                            var maxWidth = window.innerWidth - margin - document.getElementById('noButton').offsetWidth;
+                            var maxHeight = window.innerHeight - margin - document.getElementById('noButton').offsetHeight;
+
+                            var x = Math.random() * maxWidth;
+                            var y = Math.random() * maxHeight;
+
+                            document.getElementById('noButton').style.left = `${x}px`;
+                            document.getElementById('noButton').style.top = `${y}px`;
+                        }
+                    }
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
